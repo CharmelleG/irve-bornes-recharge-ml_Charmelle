@@ -1,0 +1,31 @@
+# Environnement virtuel Python
+.venv/
+venv/
+ENV/
+env/
+
+# Fichiers de données brutes, nettoyées et BDD locales (Trop lourds pour Git)
+data/
+*.csv
+*.tsv
+*.xlsx
+*.parquet
+*.db
+*.sqlite3
+
+# Rapports HTML générés (ydata-profiling, etc.)
+*.html
+
+# Cache Python et Jupyter Notebooks
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Fichiers de configuration VS Code & OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Fichiers d'environnement et secrets
+.env
