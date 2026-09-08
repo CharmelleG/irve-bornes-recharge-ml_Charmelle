@@ -4,22 +4,32 @@ Un projet d'analyse de données, de modélisation prédictive et de restitution 
 
 ---
 
-## Présentation du Projet
+## Problématique métier
 
-Ce projet a pour objectif d'analyser la répartition, la puissance et l'accessibilité des bornes de recharge pour véhicules électriques sur le territoire français à partir des données ouvertes officielles fournies par **data.gouv.fr**.
+Dans le cadre de la transition énergétique et de l'essor du véhicule électrique en France, **
+**
 
-Le projet se décompose en plusieurs grandes étapes :
-1. **Exploration & Nettoyage (EDA) :** analyse descriptive, nettoyage des données géospatiales (coordonnées GPS) et harmonisation des informations d'aménageurs et d'opérateurs.
-2. **Base de données relationnelle :** structuration et stockage optimisé des données de recharge sous SQLite pour des requêtes performantes.
-3. **Modélisation Machine Learning :**
-   * **Clustering (ML non supervisé) :** segmentation des stations de recharge (K-Means / DBSCAN) pour dégager des typologies de réseaux.
-   * **Classification (ML supervisé) :** prédiction de la tranche de puissance d'une borne selon son type d'implantation et sa localisation.
-4. **API REST :** exposition des données et des prédictions du modèle via FastAPI.
-5. **Dashboard Interactif :** cartographie dynamique et visualisation des indicateurs clés du maillage national via Streamlit et Folium.
+Pour répondre à cette problématique, le projet s'articule autour de 3 axes d'analyse :
+1. **Cartographie & Déserts de recharge :** identifier les disparités territoriales et les zones sous-équipées en bornes.
+2. **Analyse de la Puissance :** évaluer si l'offre en haute puissance répond aux besoins des axes stratégiques.
+3. **Modélisation & Optimisation (ML) :** segmenter les stations (Clustering) pour guider les futurs investissements de déploiement.
 
 ---
 
-## Arborescence du Projet
+## Démarche & étapes du projet
+
+Ce projet exploite les données ouvertes officielles fournies par **data.gouv.fr** et se décompose en plusieurs étapes :
+
+1. **Exploration & Nettoyage (EDA) :** analyse descriptive, nettoyage des données géospatiales (coordonnées GPS) et harmonisation des données.
+2. **Base de données relationnelle :** structuration et stockage optimisé des données de recharge sous SQLite.
+3. **API REST :** exposition des données et des prédictions du modèle via FastAPI (opérations CRUD).
+4. **Modélisation Machine Learning :**
+   * **Clustering (non supervisé) :** segmentation des stations de recharge (K-Means) pour dégager des typologies de réseaux.
+   * **Classification (supervisé) :** prédiction de la tranche de puissance d'une borne via GridSearch.
+5. **Dashboard & Restitution :** cartographie dynamique sous Power BI / Tableau et présentation orientée storytelling.
+---
+
+## Arborescence du projet
 
 irve-bornes-recharge-ml/
 ├── .gitignore               # Fichiers et dossiers ignorés par Git (.venv, data, etc.)
@@ -42,3 +52,5 @@ src
 │
 └── dashboard/               # Interface utilisateur interactive (Streamlit)
     └── app.py               # Code de l'application web
+docs/
+│  └── reponses_questions_analyse.md  # Réponses rédigées (S1 à S7)
