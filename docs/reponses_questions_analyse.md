@@ -43,7 +43,7 @@ Pour éliminer la redondance d'information (répétition systématique des commu
      * Les requêtes SQL/ORM (SQLAlchemy) associées aux endpoints CRUD seront ultra-rapides, car elles filtreront des tables indexées légères au lieu de scanner une table plate volumineuse.
 
    **Pour le Machine Learning** 
-    * La table POINTS_DE_CHARGE isole proprement ta variable cible (tranche_puissance) et ses descripteurs techniques. 
+    * La table POINTS_DE_CHARGE isole proprement la variable cible (tranche_puissance) et ses descripteurs techniques. 
     * Les jointures simples avec STATIONS et COMMUNES permettent d'extraire rapidement des variables explicatives géographiques sans polluer le jeu d'entraînement.
 
 **Maintenabilité et évolutivité** : si un opérateur change de nom ou si une station ajoute de nouvelles bornes, la mise à jour s'effectue sur une seule ligne ciblée sans risquer d'altérer le reste de la base.
