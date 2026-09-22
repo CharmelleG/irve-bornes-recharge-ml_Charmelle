@@ -47,3 +47,32 @@ Pour éliminer la redondance d'information (répétition systématique des commu
     * Les jointures simples avec STATIONS et COMMUNES permettent d'extraire rapidement des variables explicatives géographiques sans polluer le jeu d'entraînement.
 
 **Maintenabilité et évolutivité** : si un opérateur change de nom ou si une station ajoute de nouvelles bornes, la mise à jour s'effectue sur une seule ligne ciblée sans risquer d'altérer le reste de la base.
+
+## Semaines 3 - API sur mesure (Semaine )3
+
+### Question d'analyse
+> * Quels choix as-tu faits pour organiser/sécuriser cette API, et en quoi une API répond-elle mieux à ce contexte qu'un accès direct à la base ?
+
+Pour structurer et sécuriser cette API IRVE, plusieurs choix d'architecture ont été appliqués, rendant la solution bien plus robuste qu'un accès direct à la base de données.
+
+## Choix d'organisation et de sécurisation
+
+**Validation stricte des données (Pydantic)** : chaque entrée et sortie est filtrée par un schéma (ex : vérification que la puissance nominale est un nombre strictement positif). Cela bloque les données malformées avant même d'interroger la base.
+
+**Protection contre les injections SQL**: toutes les requêtes SQLite utilisent des requêtes préparées avec des paramètres (?), empêchant toute exécution d'instructions SQL malveillantes injectées via les requêtes HTTP.
+
+**Garde-fous métier centralisés** : la création d'un point de charge vérifie automatiquement l'existence préalable de la station rattachée et génère un identifiant unique cohérent ({id_station}P{index}).
+
+**Contrôle du volume de données (Pagination)** : l'utilisation de limites paramétrées (limit, borné entre 1 et 1000) évite de charger des dizaines de milliers de lignes en mémoire d'un seul coup.
+
+**Documentation OpenAPI / Swagger intégrée** : organisation des routes par tags (Communes, Stations, Points de Charge, Statistiques) avec des modèles de réponse explicites (response_model) pour standardiser l'exposition des données.
+
+## Pourquoi une API plutôt qu'un accès direct à la base ?
+
+**Sécurité et encapsulation** : les clients n'ont aucun accès direct au fichier .db ni au système de fichiers. Seules les actions explicitement autorisées par l'API peuvent être exécutées, évitant les suppressions accidentelles ou les altérations de schéma.
+
+**Découplage technique** : si le moteur de base de données évolue (ex : passage de SQLite à PostgreSQL) ou si le nom des colonnes change, seule l'API est modifiée. Les applications clientes (web, mobile, scripts) continuent de consommer le même contrat JSON sans casser.
+
+**Centralisation de la logique métier** : les règles (calcul d'index d'ID, validations, conversions) sont gérées à un seul endroit. Un accès direct forcerait chaque utilisateur ou application à réimplémenter cette logique, avec un risque élevé d'incohérences en base.
+
+**Compatibilité multi-plateforme et réseau** : SQLite est un moteur local peu adapté aux connexions distantes simultanées. L'API REST transforme ces données en un protocole HTTP/JSON universel, utilisable simultanément par n'importe quel langage (Python, JavaScript, Swift) sur le réseau.

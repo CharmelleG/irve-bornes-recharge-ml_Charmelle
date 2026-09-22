@@ -24,8 +24,8 @@ Ce projet exploite les données ouvertes officielles fournies par **data.gouv.fr
 2. **Base de données relationnelle :** structuration et stockage optimisé des données de recharge sous SQLite.
 3. **API REST :** exposition des données et des prédictions du modèle via FastAPI (opérations CRUD).
 4. **Modélisation Machine Learning :**
-   * **Clustering (non supervisé) :** segmentation des stations de recharge (K-Means) pour dégager des typologies de réseaux.
-   * **Classification (supervisé) :** prédiction de la tranche de puissance d'une borne via GridSearch.
+   * **Clustering (non supervisé)** : segmentation typologique des stations de recharge (K-Means) pour classifier les réseaux selon leur usage (transit, résidentiel, commercial).
+   * **Analyse Prédictive / Scoring (supervisé)** : modèle d'aide à la décision pour identifier les zones territoriales sous-équipées nécessitant en priorité le déploiement de bornes à haute puissance.
 5. **Dashboard & Restitution :** cartographie dynamique sous Power BI / Tableau et présentation orientée storytelling.
 ---
 
