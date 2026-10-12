@@ -147,6 +147,60 @@ La veille complète est dans `docs/veille_ia_bigdata.md`. Quatre tendances se d�
 
 ---
 
+## Semaine 5 : tableau de bord Power BI
+
+> *Pourquoi ces indicateurs et ces visualisations pour la problématique ?*
+
+Le tableau de bord (`dashboard/irve_bi.pbix`) lit les deux jeux propres du projet. Il compte trois pages, une par partie de la problématique.
+
+| Page | Question traitée |
+|---|---|
+| 1. Couverture et déserts | Où se situent les déserts de recharge ? |
+| 2. Recharge 150 kW | Quels territoires sont sous-équipés en bornes de 150 kW et plus ? |
+| 3. Acteurs et dynamique | Quelle dynamique de déploiement ? |
+
+### Les indicateurs et leur justification
+
+| Indicateur | Valeur (France entière) | Pourquoi cet indicateur |
+|---|---|---|
+| Communes en désert de recharge | 685 | Mesure directe de l'axe 1, selon une définition fixée à l'avance (aucun point dans la commune et plus de 10 km jusqu'au point le plus proche) |
+| Part de la population en désert | 0,9 % (614 653 habitants) | Une commune de 50 habitants ne pèse pas comme une ville : la population concernée donne la gravité réelle |
+| Points pour 10 000 habitants | 24,38 | Mesure du sous-équipement rapportée à la population. Elle est lue par département, car à l'échelle d'une commune les ratios sont instables (une borne dans un village de 100 habitants donne 100 points pour 10 000) |
+| Part des points de 150 kW et plus | 18,6 % | Seuil tiré du règlement européen AFIR, qui exige un point de 150 kW tous les 60 km sur le réseau routier central |
+| Points de 150 kW pour 100 000 habitants | 45,3 | Densité de recharge ultra-rapide, comparable entre territoires |
+| Population en désert 150 kW | 1 664 343 habitants (2,4 %) | Mesure directe de l'axe 2 : habitants à plus de 30 km d'un point de 150 kW, soit la moitié de l'espacement AFIR |
+| Nombre d'opérateurs | 343 | Structure du marché : un marché très fragmenté, ou au contraire dominé par un acteur, oriente différemment le déploiement |
+| Part des points datés | 60,8 % | Indicateur de fiabilité : il rappelle que les tendances ne portent que sur les points dont la date de mise en service est connue |
+
+Le dernier indicateur ne mesure pas l'équipement : il mesure la **qualité de la donnée**. Il évite de présenter une tendance comme si elle couvrait tout le parc.
+
+### Les visualisations et leur justification
+
+| Visualisation | Pourquoi ce choix |
+|---|---|
+| **Cartes des communes en désert** (pages 1 et 2), bulles proportionnelles à la population | La problématique est géographique : la carte montre *où* se trouvent les déserts. Elle est limitée à la métropole par un filtre propre au visuel, pour rester lisible |
+| **Barres par région** (population en désert, part des 150 kW) | Comparer des territoires entre eux. C'est ici que l'outre-mer reste visible : Mayotte et la Guyane concentrent la majorité de la population en désert |
+| **Tableau des départements** avec mise en forme conditionnelle | Passer de la carte au détail : nombre de communes en désert et points pour 10 000 habitants, département par département |
+| **Barres par catégorie de puissance AFIR**, dans l'ordre des catégories | Montrer la structure du parc : la recharge de 7,4 à 22 kW domine (55,9 % des points) |
+| **Les 15 premiers opérateurs** | Montrer la fragmentation du marché : le premier opérateur exploite environ 9 % des points |
+| **Deux graphiques alignés sur les mêmes années** : points mis en service (barres) et part des points de 150 kW (courbe) | Montrer la dynamique : mises en service doublées entre 2021 et 2025, part des 150 kW passée de 8,8 % (2021) à 31,9 % (2024). Ce sont deux graphiques séparés et non un graphique à deux axes verticaux : deux échelles sans rapport (nombre de points et pourcentage) superposées inviteraient à comparer des hauteurs qui ne se comparent pas |
+| **Barres empilées à 100 % : implantation × type de courant** | Montrer où se trouve la recharge rapide : 74,6 % en courant continu dans les stations dédiées, 22,0 % sur la voirie |
+
+### Choix de conception
+
+- **Des chiffres France entière, une carte métropolitaine.** Les indicateurs et les graphiques par région couvrent la métropole et les 5 départements d'outre-mer. Seule la carte est limitée à la métropole, sinon la taille relative des bulles écraserait les petites communes rurales.
+- **Un titre dynamique**, qui se met à jour selon la région ou le département sélectionné. La phrase clé reste lisible quel que soit le filtre.
+- **Des segments synchronisés entre les pages.** Une région choisie sur une page reste sélectionnée sur les autres.
+- **Des couleurs qui ont un sens fixe** : bleu pour le volume de points, rouge pour les déserts de recharge, orange pour le 150 kW et le courant continu. La palette est choisie pour rester distinguable par les personnes daltoniennes.
+- **Des valeurs contrôlées.** Chaque indicateur a été comparé aux résultats des notebooks d'analyse.
+
+### Limites
+
+- **Opérateurs** : Power BI ne distingue pas les majuscules des minuscules, d'où 343 opérateurs contre 338 dans l'analyse Python. Celle-ci regroupe aussi les variantes d'accents et de ponctuation.
+- **Tendances** : les graphiques par année ne portent que sur les points datés (60,8 % du parc), et l'année 2026 s'arrête fin août.
+
+---
+
 ## Semaine 6 : machine learning et risques
 
 > *Pourquoi ce modèle ? Quels risques majeurs as-tu identifiés et comment les limiter ?*
@@ -210,6 +264,8 @@ La silhouette, autour de 0,33, indique une structure modérée.
 **Les écarts régionaux confirment l'analyse exploratoire** : 38,4 % de stations de recharge rapide en Bourgogne-Franche-Comté, contre 18,1 % en Île-de-France.
 
 ### Risques et mesures
+
+L'évaluation complète, avec 21 risques classés par probabilité et impact, est dans `docs/evaluation_risques.md`. Les principaux :
 
 | Risque | Constat | Mesure prise |
 |---|---|---|
