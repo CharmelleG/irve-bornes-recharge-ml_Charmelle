@@ -283,7 +283,7 @@ L'évaluation complète, avec 21 risques classés par probabilité et impact, es
 
 > *Comment le discours a-t-il été adapté à un public non technique ?*
 
-Le support (`docs/restitution_irve.pptx`) compte 10 diapositives pour un oral de 5 à 10 minutes, démonstration du tableau de bord comprise. Le texte de l'oral figure dans les notes de l'orateur.
+Le support (`docs/restitution_irve.pptx`) compte 11 diapositives pour un oral de 5 à 10 minutes, démonstration du tableau de bord comprise. Le texte de l'oral figure dans les notes de l'orateur.
 
 ### Une histoire plutôt qu'un rapport
 
@@ -296,13 +296,15 @@ Le discours suit un fil narratif, et non l'ordre des étapes techniques du proje
 | Retournement | La moyenne cache des inégalités : 73 % des habitants en désert vivent outre-mer, et Mayotte n'a aucune borne publiée | 4-5 |
 | Preuve | Démonstration du tableau de bord : les chiffres se recalculent pour chaque territoire | 6 |
 | Dynamique | Le déploiement a doublé et se tourne vers la recharge rapide | 7 |
-| Exceptions | Un modèle repère 557 communes sans borne qui devraient en avoir une | 8 |
+| Exceptions | Un modèle de machine learning repère 557 communes sans borne qui devraient en avoir une | 8 |
 | Action | Trois priorités : outre-mer, villages isolés, bourgs périurbains | 9 |
-| Honnêteté | Ce que les données permettent d'affirmer, et ce qu'elles ne disent pas | 10 |
+| Coulisses | Le parcours des données : nettoyage, base, API (« un guichet »), tableau de bord et modèle | 10 |
+| Honnêteté | Ce que les données permettent d'affirmer, et ce qu'elles ne disent pas | 11 |
 
 ### Les adaptations
 
 - **Une idée par diapositive**, énoncée dans le titre : le titre est la conclusion (« Les déserts de recharge sont d'abord ultramarins »), pas un thème (« Analyse des déserts »).
+- **Le travail technique résumé en une diapositive** (« les coulisses »), placée après les résultats : le parcours des données en cinq étapes, avec l'API présentée comme un guichet où tout le monde consulte et où seules les personnes munies d'une clé modifient.
 - **Aucun vocabulaire technique à l'écran.** Le dédoublonnage, la géolocalisation par contour communal, la cross-validation ou le K-Means restent dans les notebooks, pour les questions. Le modèle est présenté par ce qu'il fait : « il devine si une commune est équipée dans 87 % des comparaisons ».
 - **Des chiffres traduits en repères concrets** : « 640 mètres », « 1 borne sur 3 », « une ville de 5 000 habitants a 91 % de chances d'être équipée », plutôt qu'une AUC de 0,871 ou une part de 31,9 %.
 - **Des définitions posées avant les résultats**, en une phrase chacune : un désert de recharge, un désert de recharge rapide, avec leur traduction (« la recharge des longs trajets, environ 20 minutes »).
