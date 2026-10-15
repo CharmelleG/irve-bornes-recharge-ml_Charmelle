@@ -283,7 +283,7 @@ L'évaluation complète, avec 21 risques classés par probabilité et impact, es
 
 > *Comment le discours a-t-il été adapté à un public non technique ?*
 
-Le support (`docs/restitution_irve.pptx`) compte 12 diapositives pour un oral de 5 à 10 minutes, démonstration du tableau de bord comprise. Le texte de l'oral figure dans les notes de l'orateur.
+Le support (`docs/restitution_irve.pptx`) compte 13 diapositives pour un oral de 5 à 10 minutes, démonstration du tableau de bord comprise. Le texte de l'oral figure dans les notes de l'orateur.
 
 ### Une histoire plutôt qu'un rapport
 
@@ -292,15 +292,15 @@ Le discours suit un fil narratif, et non l'ordre des étapes techniques du proje
 | Temps du récit | Message | Diapositives |
 |---|---|---|
 | Accroche | « Si vous achetiez une voiture électrique demain, où la rechargeriez-vous ? » | 1 |
-| Situation | La couverture est large : la moitié des habitants vit à moins de 640 m d'une borne | 2-3 |
-| Retournement | La moyenne cache des inégalités : 73 % des habitants en désert vivent outre-mer, et Mayotte n'a aucune borne publiée | 4-5 |
-| Preuve | Démonstration du tableau de bord : les chiffres se recalculent pour chaque territoire | 6 |
-| Dynamique | Le déploiement a doublé et se tourne vers la recharge rapide | 7 |
-| Exceptions | Un modèle de machine learning repère 557 communes sans borne qui devraient en avoir une | 8 |
-| Action | Trois priorités : outre-mer, villages isolés, bourgs périurbains | 9 |
-| Coulisses | Le parcours des données : nettoyage, base, API (« un guichet »), tableau de bord et modèle | 10 |
-| Méthode | Trois modèles comparés (Logistic Regression, Random Forest, XGBoost) : scores quasi identiques, le plus simple retenu | 11 |
-| Honnêteté | Ce que les données permettent d'affirmer, et ce qu'elles ne disent pas | 12 |
+| Cap | La problématique et quatre objectifs : localiser, mesurer, suivre, repérer | 2 |
+| Situation | La couverture est large : la moitié des habitants vit à moins de 640 m d'une borne | 3-4 |
+| Retournement | La moyenne cache des inégalités : 73 % des habitants en désert vivent outre-mer, et Mayotte n'a aucune borne publiée | 5-6 |
+| Preuve | Démonstration du tableau de bord : les chiffres se recalculent pour chaque territoire | 7 |
+| Dynamique | Le déploiement a doublé et se tourne vers la recharge rapide | 8 |
+| Exceptions | Un modèle de machine learning repère 557 communes sans borne qui devraient en avoir une ; trois modèles comparés (Logistic Regression, Random Forest, XGBoost), scores quasi identiques, le plus simple retenu | 9-10 |
+| Action | Trois priorités : outre-mer, villages isolés, bourgs périurbains | 11 |
+| Coulisses | Le parcours des données : nettoyage, base, API (« un guichet »), tableau de bord et modèle | 12 |
+| Honnêteté | Ce que les données permettent d'affirmer, et ce qu'elles ne disent pas | 13 |
 
 ### Les adaptations
 
