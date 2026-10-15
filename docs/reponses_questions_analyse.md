@@ -229,7 +229,7 @@ Trois modèles ont été comparés par GridSearchCV. Le test porte sur 20 dépar
 
 - **Lisibilité** : ses coefficients s'expliquent à un public non technique.
 - **Stabilité** : elle a moins d'hyperparamètres, donc moins de risque d'overfitting.
-- **Coût** : elle s'entraîne en 3 secondes, contre 34 pour la Random Forest.
+- **Coût** : elle s'entraîne en quelques secondes, contre plus de 30 pour la Random Forest.
 
 **Résultat principal.** La population explique presque tout : la permutation importance de la population vaut 0,355, contre moins de 0,02 pour les autres variables. Le déploiement suit la population. Le scoring identifie **557 communes sans point avec une probabilité d'équipement supérieure à 0,7** (1,62 million d'habitants). Ce sont surtout des communes de la couronne des villes, à moins de 5 km d'un point dans 79,4 % des cas : il s'agit d'un sous-équipement relatif, pas d'un éloignement.
 
@@ -283,7 +283,7 @@ L'évaluation complète, avec 21 risques classés par probabilité et impact, es
 
 > *Comment le discours a-t-il été adapté à un public non technique ?*
 
-Le support (`docs/restitution_irve.pptx`) compte 11 diapositives pour un oral de 5 à 10 minutes, démonstration du tableau de bord comprise. Le texte de l'oral figure dans les notes de l'orateur.
+Le support (`docs/restitution_irve.pptx`) compte 12 diapositives pour un oral de 5 à 10 minutes, démonstration du tableau de bord comprise. Le texte de l'oral figure dans les notes de l'orateur.
 
 ### Une histoire plutôt qu'un rapport
 
@@ -299,7 +299,8 @@ Le discours suit un fil narratif, et non l'ordre des étapes techniques du proje
 | Exceptions | Un modèle de machine learning repère 557 communes sans borne qui devraient en avoir une | 8 |
 | Action | Trois priorités : outre-mer, villages isolés, bourgs périurbains | 9 |
 | Coulisses | Le parcours des données : nettoyage, base, API (« un guichet »), tableau de bord et modèle | 10 |
-| Honnêteté | Ce que les données permettent d'affirmer, et ce qu'elles ne disent pas | 11 |
+| Méthode | Trois modèles comparés (Logistic Regression, Random Forest, XGBoost) : scores quasi identiques, le plus simple retenu | 11 |
+| Honnêteté | Ce que les données permettent d'affirmer, et ce qu'elles ne disent pas | 12 |
 
 ### Les adaptations
 
