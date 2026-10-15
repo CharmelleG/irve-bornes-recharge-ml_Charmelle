@@ -78,6 +78,7 @@ irve-bornes-recharge-ml/
     ├── schema_bdd.drawio         # Schéma MERISE (draw.io)
     ├── veille_ia_bigdata.md      # Synthèse de veille IA / Big Data
     ├── evaluation_risques.md     # Évaluation des risques (données, modèles, déploiement, éthique)
+    ├── restitution_irve.pptx     # Support de restitution (public non technique, notes de l'orateur)
     └── reponses_questions_analyse.md # Réponses aux questions d'analyse de chaque étape
 ```
 

@@ -276,3 +276,39 @@ L'évaluation complète, avec 21 risques classés par probabilité et impact, es
 | Extrapolation | Les 129 communes d'outre-mer sont hors du domaine d'entraînement | Modèle non appliqué à l'outre-mer, contrôle automatique dans le notebook |
 | Biais du modèle | Le modèle apprend le déploiement passé : une commune « attendue » équipée n'en a pas forcément besoin | La liste est une aide à la décision, à croiser avec le terrain ; aucune décision automatique |
 | Usage et éthique | Un classement peut orienter des investissements publics au détriment des petites communes | Les déserts ruraux sont présentés à part, avec la population concernée ; la méthode et les limites sont documentées |
+
+---
+
+## Semaine 7 : restitution
+
+> *Comment le discours a-t-il été adapté à un public non technique ?*
+
+Le support (`docs/restitution_irve.pptx`) compte 10 diapositives pour un oral de 5 à 10 minutes, démonstration du tableau de bord comprise. Le texte de l'oral figure dans les notes de l'orateur.
+
+### Une histoire plutôt qu'un rapport
+
+Le discours suit un fil narratif, et non l'ordre des étapes techniques du projet :
+
+| Temps du récit | Message | Diapositives |
+|---|---|---|
+| Accroche | « Si vous achetiez une voiture électrique demain, où la rechargeriez-vous ? » | 1 |
+| Situation | La couverture est large : la moitié des habitants vit à moins de 640 m d'une borne | 2-3 |
+| Retournement | La moyenne cache des inégalités : 73 % des habitants en désert vivent outre-mer, et Mayotte n'a aucune borne publiée | 4-5 |
+| Preuve | Démonstration du tableau de bord : les chiffres se recalculent pour chaque territoire | 6 |
+| Dynamique | Le déploiement a doublé et se tourne vers la recharge rapide | 7 |
+| Exceptions | Un modèle repère 557 communes sans borne qui devraient en avoir une | 8 |
+| Action | Trois priorités : outre-mer, villages isolés, bourgs périurbains | 9 |
+| Honnêteté | Ce que les données permettent d'affirmer, et ce qu'elles ne disent pas | 10 |
+
+### Les adaptations
+
+- **Une idée par diapositive**, énoncée dans le titre : le titre est la conclusion (« Les déserts de recharge sont d'abord ultramarins »), pas un thème (« Analyse des déserts »).
+- **Aucun vocabulaire technique à l'écran.** Le dédoublonnage, la géolocalisation par contour communal, la cross-validation ou le K-Means restent dans les notebooks, pour les questions. Le modèle est présenté par ce qu'il fait : « il devine si une commune est équipée dans 87 % des comparaisons ».
+- **Des chiffres traduits en repères concrets** : « 640 mètres », « 1 borne sur 3 », « une ville de 5 000 habitants a 91 % de chances d'être équipée », plutôt qu'une AUC de 0,871 ou une part de 31,9 %.
+- **Des définitions posées avant les résultats**, en une phrase chacune : un désert de recharge, un désert de recharge rapide, avec leur traduction (« la recharge des longs trajets, environ 20 minutes »).
+- **Un exemple réel** (Thorigny-sur-Marne : 10 440 habitants, sans borne, la plus proche à 1,3 km) plutôt qu'une liste de communes.
+- **Des graphiques réduits à l'essentiel** : une seule série par graphique, valeurs écrites sur les barres, aucun axe secondaire.
+- **Les mêmes couleurs que le tableau de bord** : rouge pour les déserts, orange pour la recharge rapide, bleu pour les bornes. Le public les retrouve pendant la démonstration.
+- **La démonstration remplace les captures d'écran.** Sélectionner une région devant le public montre que les chiffres ne sont pas figés.
+- **Des recommandations**, parce qu'un public non technique attend une conclusion utile : où installer les prochaines bornes.
+- **Les limites dites simplement**, à la fin : le projet mesure les bornes, pas leur utilisation ; le fichier public est incomplet ; les distances sont à vol d'oiseau.
